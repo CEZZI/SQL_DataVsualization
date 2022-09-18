@@ -157,6 +157,7 @@ order by uid
 
 ### 4.3 连接查询
 
+```
 select uid,
     count(uid) as exam_cnt, count(uid) as question_cnt
 from 
@@ -166,6 +167,7 @@ where uid in (
     select uid from user_info left join exam_record using(uid) join examination_info using(exam_id)
     where avg(score) > 80 and tag='SQL' and difficulty='hard' and level =
 )
+```
 
 #### SQL134 满足条件的用户的试卷完成数和题目练习数
 
